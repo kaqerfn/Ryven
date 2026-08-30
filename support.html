@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Ryven — Support</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        .support-content {
+            width: min(850px, 100%);
+            margin: auto;
+        }
+
+        .support-header {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .support-header h1 {
+            font-family: "Outfit", sans-serif;
+
+            font-size: clamp(42px, 6vw, 64px);
+
+            line-height: 1;
+
+            font-weight: 800;
+
+            letter-spacing: -2px;
+        }
+
+        .support-header h1 span {
+            background:
+                linear-gradient(
+                    90deg,
+                    #fff,
+                    #ff9bd9,
+                    #ff6bc4
+                );
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .support-header p {
+            max-width: 620px;
+
+            margin: 17px auto 0;
+
+            color: #cbb5c6;
+
+            font-size: 14px;
+
+            line-height: 1.9;
+        }
+
+        .support-card {
+            padding: 35px 32px;
+
+            margin-bottom: 20px;
+
+            border-radius: 24px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(37, 12, 40, .80),
+                    rgba(14, 6, 20, .72)
+                );
+
+            border:
+                1px solid rgba(255, 170, 225, .11);
+
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+        }
+
+        .support-card h2 {
+            margin-bottom: 12px;
+
+            font-family: "Outfit", sans-serif;
+
+            font-size: 26px;
+
+            font-weight: 700;
+        }
+
+        .support-card > p {
+            margin-bottom: 25px;
+
+            color: #c3adbd;
+
+            font-size: 13px;
+
+            line-height: 1.9;
+        }
+
+        .support-list {
+            display: flex;
+            flex-direction: column;
+
+            gap: 13px;
+
+            list-style: none;
+        }
+
+        .support-list li {
+            padding: 15px 17px;
+
+            border-radius: 14px;
+
+            background:
+                rgba(255,255,255,.035);
+
+            border:
+                1px solid rgba(255,170,225,.07);
+
+            color: #d6c1d1;
+
+            font-size: 13px;
+
+            line-height: 1.7;
+        }
+
+        .support-list li strong {
+            display: block;
+
+            margin-bottom: 3px;
+
+            color: #fff;
+
+            font-weight: 700;
+        }
+
+        .discord-support {
+            text-align: center;
+
+            padding: 42px 30px;
+        }
+
+        .discord-support .icon {
+            margin-bottom: 14px;
+
+            font-size: 42px;
+        }
+
+        .discord-support h2 {
+            margin-bottom: 10px;
+        }
+
+        .discord-support p {
+            max-width: 550px;
+
+            margin:
+                0 auto
+                25px;
+        }
+
+        .faq-title {
+            margin-top: 38px;
+            margin-bottom: 18px;
+
+            font-family: "Outfit", sans-serif;
+
+            font-size: 27px;
+
+            text-align: center;
+        }
+
+        .faq-item {
+            margin-bottom: 12px;
+
+            overflow: hidden;
+
+            border-radius: 17px;
+
+            background:
+                rgba(20, 8, 24, .70);
+
+            border:
+                1px solid rgba(255,170,225,.10);
+        }
+
+        .faq-question {
+            width: 100%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 20px 22px;
+
+            border: 0;
+
+            background: transparent;
+
+            color: #fff;
+
+            font-family: inherit;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            text-align: left;
+
+            cursor: pointer;
+        }
+
+        .faq-plus {
+            color: #ff8bd3;
+
+            font-size: 21px;
+
+            transition: .25s ease;
+        }
+
+        .faq-answer {
+            display: none;
+
+            padding:
+                0
+                22px
+                21px;
+
+            color: #c7b1c1;
+
+            font-size: 12px;
+
+            line-height: 1.8;
+        }
+
+        .faq-item.open .faq-answer {
+            display: block;
+        }
+
+        .faq-item.open .faq-plus {
+            transform: rotate(45deg);
+        }
+
+        @media (max-width: 620px) {
+
+            .support-card {
+                padding:
+                    28px
+                    23px;
+            }
+
+            .discord-support {
+                padding:
+                    38px
+                    22px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+        <a href="index.html" class="logo">
+            R<span>YVEN</span>
+        </a>
+
+        <div class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="download.html">
+                Download
+            </a>
+
+            <a
+                href="support.html"
+                class="active"
+            >
+                Support
+            </a>
+
+            <a
+                href="https://discord.gg/Ryvenfn"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Discord
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- SUPPORT -->
+
+    <main class="page">
+
+        <div class="support-content">
+
+
+            <div class="support-header">
+
+                <div class="badge">
+                    SUPPORT RYVEN
+                </div>
+
+                <h1>
+                    Need <span>help?</span>
+                </h1>
+
+                <p>
+                    Find answers to common questions or join
+                    the Ryven Discord for direct support.
+                </p>
+
+            </div>
+
+
+            <!-- DISCORD -->
+
+            <div class="support-card discord-support">
+
+                <div class="icon">
+                    💬
+                </div>
+
+                <h2>
+                    Ryven Discord
+                </h2>
+
+                <p>
+                    The fastest way to get help is through
+                    our official Discord. Open a support ticket
+                    and explain your issue to the support team.
+                </p>
+
+                <a
+                    href="https://discord.gg/Ryvenfn"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-primary"
+                >
+                    Join Discord
+                </a>
+
+            </div>
+
+
+            <!-- SUPPORT INFORMATION -->
+
+            <div class="support-card">
+
+                <h2>
+                    Getting Support
+                </h2>
+
+                <p>
+                    Before opening a ticket, make sure you
+                    provide enough information for our team
+                    to understand the issue.
+                </p>
+
+                <ul class="support-list">
+
+                    <li>
+                        <strong>Purchases</strong>
+                        Include your purchase information
+                        if your issue is related to a package.
+                    </li>
+
+                    <li>
+                        <strong>Downloads</strong>
+                        Tell us which platform and build
+                        you're having trouble with.
+                    </li>
+
+                    <li>
+                        <strong>Account Issues</strong>
+                        Explain the issue clearly and provide
+                        your Ryven username if necessary.
+                    </li>
+
+                    <li>
+                        <strong>Other Issues</strong>
+                        Give as much information as possible
+                        so the support team can help you.
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- FAQ -->
+
+            <h2 class="faq-title">
+                Common Questions
+            </h2>
+
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+
+                    <span>
+                        Where do I get help with Ryven?
+                    </span>
+
+                    <span class="faq-plus">
+                        +
+                    </span>
+
+                </button>
+
+                <div class="faq-answer">
+                    Join the official Ryven Discord and open
+                    a support ticket.
+                </div>
+
+            </div>
+
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+
+                    <span>
+                        I can't install the game. What should I do?
+                    </span>
+
+                    <span class="faq-plus">
+                        +
+                    </span>
+
+                </button>
+
+                <div class="faq-answer">
+                    Make sure you're using the correct build
+                    for your platform. If you're still having
+                    trouble, open a support ticket.
+                </div>
+
+            </div>
+
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+
+                    <span>
+                        Where can I find announcements?
+                    </span>
+
+                    <span class="faq-plus">
+                        +
+                    </span>
+
+                </button>
+
+                <div class="faq-answer">
+                    Ryven announcements and updates are posted
+                    in the official Discord.
+                </div>
+
+            </div>
+
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+
+                    <span>
+                        Is Android available?
+                    </span>
+
+                    <span class="faq-plus">
+                        +
+                    </span>
+
+                </button>
+
+                <div class="faq-answer">
+                    The APK version is currently coming soon.
+                    Watch the Discord for updates.
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        © 2026 Ryven. All rights reserved.
+
+    </footer>
+
+
+    <script>
+
+        document
+            .querySelectorAll(".faq-question")
+            .forEach(question => {
+
+                question.addEventListener("click", () => {
+
+                    const item =
+                        question.parentElement;
+
+                    item.classList.toggle("open");
+
+                });
+
+            });
+
+    </script>
+
+</body>
+
+</html>
