@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ryven — Donate</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #080808;
+            color: white;
+            min-height: 100vh;
+        }
+
+        nav {
+            height: 75px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 7%;
+            border-bottom: 1px solid #181818;
+        }
+
+        .logo {
+            color: white;
+            text-decoration: none;
+            font-size: 25px;
+            font-weight: 800;
+        }
+
+        .logo span {
+            color: #ff4fa3;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: #888;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: white;
+        }
+
+        .page {
+            min-height: calc(100vh - 135px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 20px;
+        }
+
+        .content {
+            width: 100%;
+            max-width: 650px;
+            text-align: center;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 7px 12px;
+            border: 1px solid #242424;
+            border-radius: 5px;
+            color: #ff4fa3;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            font-size: 65px;
+            margin-bottom: 20px;
+        }
+
+        h1 span {
+            color: #ff4fa3;
+        }
+
+        .description {
+            color: #888;
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 35px;
+        }
+
+        .donate-box {
+            border: 1px solid #1c1c1c;
+            background: #0d0d0d;
+            border-radius: 8px;
+            padding: 30px;
+        }
+
+        .donate-box h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .donate-box p {
+            color: #777;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+
+        .donate-button {
+            display: inline-block;
+            padding: 13px 28px;
+            background: #ff4fa3;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .donate-button:hover {
+            opacity: 0.85;
+        }
+
+        .back {
+            display: inline-block;
+            margin-top: 20px;
+            color: #666;
+            text-decoration: none;
+            font-size: 13px;
+        }
+
+        footer {
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-top: 1px solid #181818;
+            color: #555;
+            font-size: 12px;
+        }
+
+        @media (max-width: 650px) {
+            nav {
+                padding: 0 20px;
+            }
+
+            .nav-links {
+                gap: 15px;
+            }
+
+            .nav-links a {
+                font-size: 12px;
+            }
+
+            h1 {
+                font-size: 45px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<nav>
+    <a href="index.html" class="logo">
+        R<span>YVEN</span>
+    </a>
+
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="download.html">Download</a>
+        <a href="support.html">Support</a>
+        <a href="donate.html" class="active">Donate</a>
+        <a href="https://discord.gg/Ryvenfn" target="_blank">Discord</a>
+    </div>
+</nav>
+
+<main class="page">
+    <div class="content">
+
+        <div class="badge">
+            SUPPORT RYVEN
+        </div>
+
+        <h1>
+            Support <span>Ryven.</span>
+        </h1>
+
+        <p class="description">
+            Want to support Ryven? Your donations help
+            keep the project running and support future
+            development.
+        </p>
+
+        <div class="donate-box">
+
+            <h2>
+                Donate to Ryven
+            </h2>
+
+            <p>
+                Click below to view the available donation options.
+            </p>
+
+            <a
+                href="https://ryven-donation.mysellauth.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="donate-button"
+            >
+                Donate
+            </a>
+
+        </div>
+
+        <a href="index.html" class="back">
+            ← Back to Home
+        </a>
+
+    </div>
+</main>
+
+<footer>
+    © 2026 Ryven. All rights reserved.
+</footer>
+
+</body>
+</html>
