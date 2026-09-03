@@ -1,1 +1,2 @@
 # Ryven-Website
+I made this website for Ryven using HTML and CSS, with the pages connected through simple links. The website uses Google Fonts and has a dark design with the Ryven branding. The website files are kept in the main root of the GitHub repository and the site is hosted with GitHub Pages.
