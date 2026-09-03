@@ -12,10 +12,25 @@
 
     <title>Hope — Chapter 5 Season 1</title>
 
-    <meta property="og:title" content="Hope">
-    <meta property="og:description" content="Hope — Chapter 5 Season 1">
-    <meta property="og:image" content="C0027425-3D9B-43DF-9A82-8EEE338BABB0.png">
-    <meta property="og:type" content="website">
+    <meta
+        property="og:title"
+        content="Hope"
+    >
+
+    <meta
+        property="og:description"
+        content="Hope — Chapter 5 Season 1"
+    >
+
+    <meta
+        property="og:image"
+        content="C0027425-3D9B-43DF-9A82-8EEE338BABB0.png"
+    >
+
+    <meta
+        property="og:type"
+        content="website"
+    >
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -60,8 +75,8 @@
             justify-content: space-between;
             background: rgba(8, 9, 13, .94);
             border-bottom: 1px solid rgba(255,255,255,.08);
-            backdrop-filter: blur(10px);
-            z-index: 20;
+            backdrop-filter: blur(12px);
+            z-index: 100;
         }
 
         .logo {
@@ -76,12 +91,14 @@
 
         .nav-links {
             display: flex;
+            align-items: center;
             gap: 20px;
         }
 
         .nav-links a {
             color: #999ba5;
             font-size: 14px;
+            transition: .2s;
         }
 
         .nav-links a:hover {
@@ -99,34 +116,45 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-        }
-
-        .container {
-            width: 100%;
+            position: relative;
+            overflow: hidden;
         }
 
         .hero-content {
+            width: 100%;
             max-width: 800px;
-            margin: auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-image {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 25px;
+            margin: 0 auto 28px;
+            display: block;
+            box-shadow: 0 15px 50px rgba(0,0,0,.45);
         }
 
         .badge {
             display: inline-block;
             padding: 7px 14px;
             margin-bottom: 24px;
-            border: 1px solid #f064a5;
+            border: 1px solid rgba(240,100,165,.7);
             border-radius: 30px;
             color: #f064a5;
             font-size: 12px;
             font-weight: 600;
+            letter-spacing: .5px;
         }
 
         h1 {
             font-family: "Poppins", Arial, sans-serif;
             font-size: clamp(50px, 8vw, 88px);
             line-height: 1;
-            margin-bottom: 24px;
             font-weight: 800;
+            margin-bottom: 24px;
         }
 
         h1 span {
@@ -135,7 +163,7 @@
 
         .hero p {
             max-width: 650px;
-            margin: auto;
+            margin: 0 auto;
             color: #999ba5;
             font-size: 16px;
             line-height: 1.7;
@@ -155,6 +183,8 @@
             border-radius: 7px;
             font-size: 14px;
             font-weight: 700;
+            cursor: pointer;
+            transition: .2s;
         }
 
         .btn-primary {
@@ -164,6 +194,7 @@
 
         .btn-primary:hover {
             background: #ed68a5;
+            transform: translateY(-1px);
         }
 
         .btn-secondary {
@@ -178,8 +209,9 @@
         }
 
         section {
-            padding: 100px 7%;
             min-height: 400px;
+            padding: 100px 7%;
+            scroll-margin-top: 70px;
         }
 
         .section-dark {
@@ -206,6 +238,12 @@
             color: #999ba5;
             font-size: 15px;
             line-height: 1.7;
+            max-width: 650px;
+            margin: auto;
+        }
+
+        .download-box {
+            margin-top: 30px;
         }
 
         footer {
@@ -238,6 +276,11 @@
             section {
                 padding-left: 5%;
                 padding-right: 5%;
+            }
+
+            .hero-image {
+                width: 145px;
+                height: 145px;
             }
 
         }
@@ -290,11 +333,20 @@
 
     <!-- HOME -->
 
-    <main class="page" id="home">
+    <main class="page">
 
-        <div class="hero container">
+        <div
+            class="hero"
+            id="home"
+        >
 
             <div class="hero-content">
+
+                <img
+                    src="C0027425-3D9B-43DF-9A82-8EEE338BABB0.png"
+                    alt="Hope"
+                    class="hero-image"
+                >
 
                 <div class="badge">
                     HOPE — CHAPTER 5 SEASON 1
@@ -320,7 +372,7 @@
                     </a>
 
                     <a
-                        href="#donate"
+                        href="#support"
                         class="btn btn-secondary"
                     >
                         Support Hope
@@ -332,75 +384,94 @@
 
         </div>
 
+
+        <!-- DOWNLOAD -->
+
+        <section id="download">
+
+            <div class="section-content">
+
+                <h2>
+                    <span>Download</span> Hope
+                </h2>
+
+                <p>
+                    Hope is coming soon. Join the Discord for
+                    release updates.
+                </p>
+
+                <div class="download-box">
+
+                    <a
+                        href="https://discord.gg/hkMXKRY2qv"
+                        class="btn btn-primary"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Join Discord
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SUPPORT -->
+
+        <section id="support" class="section-dark">
+
+            <div class="section-content">
+
+                <h2>
+                    <span>Support</span>
+                </h2>
+
+                <p>
+                    Need help with Hope? Join the Discord
+                    and let us know.
+                </p>
+
+                <div class="download-box">
+
+                    <a
+                        href="https://discord.gg/hkMXKRY2qv"
+                        class="btn btn-primary"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Join Discord
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- DONATE -->
+
+        <section id="donate">
+
+            <div class="section-content">
+
+                <h2>
+                    <span>Donate</span>
+                </h2>
+
+                <p>
+                    Donations aren't available right now.
+                    If that changes, the information will be
+                    posted here.
+                </p>
+
+            </div>
+
+        </section>
+
     </main>
-
-
-    <!-- DOWNLOAD -->
-
-    <section id="download">
-
-        <div class="section-content">
-
-            <h2>
-                <span>Download</span>
-            </h2>
-
-            <p>
-                The download will be added here once Hope is ready.
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- SUPPORT -->
-
-    <section id="support" class="section-dark">
-
-        <div class="section-content">
-
-            <h2>
-                <span>Support</span>
-            </h2>
-
-            <p>
-                Need help with Hope? Join the Discord and let us know.
-            </p>
-
-            <br>
-
-            <a
-                href="https://discord.gg/hkMXKRY2qv"
-                class="btn btn-primary"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                Join Discord
-            </a>
-
-        </div>
-
-    </section>
-
-
-    <!-- DONATE -->
-
-    <section id="donate">
-
-        <div class="section-content">
-
-            <h2>
-                <span>Donate</span>
-            </h2>
-
-            <p>
-                Donations aren't available right now.
-            </p>
-
-        </div>
-
-    </section>
 
 
     <!-- FOOTER -->
