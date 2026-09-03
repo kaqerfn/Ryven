@@ -379,9 +379,63 @@
             margin: 0 auto 25px;
         }
 
-        .platforms {
+        .download-options {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
+            margin-top: 30px;
+        }
+
+        .download-option {
+            padding: 25px 20px;
+
+            border-radius: 18px;
+
+            background:
+                rgba(255, 100, 200, .035);
+
+            border:
+                1px solid rgba(255, 130, 215, .08);
+        }
+
+        .download-option h3 {
+            margin-bottom: 7px;
+
+            font-family: "Outfit", sans-serif;
+
+            font-size: 19px;
+        }
+
+        .download-option p {
+            margin-bottom: 18px;
+
+            font-size: 12px;
+        }
+
+        .download-option .btn {
+            width: 100%;
+        }
+
+        .status {
+            display: inline-block;
+
+            margin-bottom: 16px;
+
+            padding: 6px 10px;
+
+            border-radius: 999px;
+
+            color: #ffb4e2;
+
+            background: rgba(255, 80, 190, .10);
+
+            font-size: 10px;
+            font-weight: 700;
+        }
+
+        .platforms {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
 
             gap: 14px;
 
@@ -658,6 +712,10 @@
                     23px;
             }
 
+            .download-options {
+                grid-template-columns: 1fr;
+            }
+
             .platforms {
                 grid-template-columns: 1fr;
             }
@@ -771,8 +829,8 @@
                 </h2>
 
                 <p>
-                    Choose your platform and get ready to
-                    experience Chapter 1 Season 9.
+                    Download the Ryven build or launcher for
+                    your supported platform.
                 </p>
 
             </div>
@@ -780,21 +838,76 @@
             <div class="card download-card">
 
                 <h2>
-                    Ryven Launcher
+                    Windows
                 </h2>
 
                 <p>
-                    Download the Ryven launcher and get access
-                    to the latest available build.
+                    Download the current Ryven Windows build
+                    and start playing Chapter 1 Season 9.
                 </p>
 
                 <a
-                    href="#"
+                    href="https://dl.fortforge.co.uk/download/942517ec-a6ed-4e93-895b-da03273ce715/build"
                     class="btn btn-primary"
-                    onclick="alert('The Ryven download is not available yet.'); return false;"
+                    target="_blank"
+                    rel="noopener noreferrer"
                 >
-                    Download Ryven
+                    Download Windows Build
                 </a>
+
+                <div class="download-options">
+
+                    <div class="download-option">
+
+                        <span class="status">
+                            AVAILABLE
+                        </span>
+
+                        <h3>
+                            Windows Build
+                        </h3>
+
+                        <p>
+                            Current Ryven game build.
+                        </p>
+
+                        <a
+                            href="https://dl.fortforge.co.uk/download/942517ec-a6ed-4e93-895b-da03273ce715/build"
+                            class="btn btn-primary"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Download Build
+                        </a>
+
+                    </div>
+
+                    <div class="download-option">
+
+                        <span class="status">
+                            COMING SOON
+                        </span>
+
+                        <h3>
+                            Ryven Launcher
+                        </h3>
+
+                        <p>
+                            Launcher for managing Ryven
+                            and its available builds.
+                        </p>
+
+                        <a
+                            href="#"
+                            class="btn btn-secondary"
+                            onclick="alert('The Ryven Launcher is not available yet.'); return false;"
+                        >
+                            Launcher Soon
+                        </a>
+
+                    </div>
+
+                </div>
 
                 <div class="platforms">
 
@@ -805,7 +918,7 @@
                         </strong>
 
                         <span>
-                            Launcher available soon
+                            Build available
                         </span>
 
                     </div>
@@ -817,7 +930,7 @@
                         </strong>
 
                         <span>
-                            Build available soon
+                            Coming soon
                         </span>
 
                     </div>
