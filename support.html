@@ -10,7 +10,7 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>Ryven — Support</title>
+    <title>Ryven — Chapter 1 Season 9</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,29 +20,199 @@
         rel="stylesheet"
     >
 
-    <link rel="stylesheet" href="style.css">
-
     <style>
 
-        .support-content {
-            width: min(850px, 100%);
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            color: #fff;
+            min-height: 100vh;
+            overflow-x: hidden;
+
+            background:
+                linear-gradient(
+                    rgba(16, 4, 18, .58),
+                    rgba(7, 2, 11, .80)
+                ),
+                url("image.jpeg") center / cover fixed no-repeat;
+
+            background-color: #100611;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: -2;
+            pointer-events: none;
+
+            background:
+                radial-gradient(
+                    circle at 50% 0%,
+                    rgba(255, 95, 195, .25),
+                    transparent 40%
+                ),
+                radial-gradient(
+                    circle at 90% 80%,
+                    rgba(184, 76, 255, .12),
+                    transparent 35%
+                );
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            pointer-events: none;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    transparent 45%,
+                    rgba(0, 0, 0, .42)
+                );
+        }
+
+        nav {
+            position: fixed;
+            top: 18px;
+            left: 50%;
+            transform: translateX(-50%);
+
+            width: min(1120px, calc(100% - 30px));
+            min-height: 68px;
+
+            padding: 10px 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            background: rgba(18, 7, 22, .76);
+            border: 1px solid rgba(255, 180, 225, .14);
+            border-radius: 20px;
+
+            backdrop-filter: blur(22px);
+            -webkit-backdrop-filter: blur(22px);
+
+            box-shadow:
+                0 20px 70px rgba(0, 0, 0, .35);
+
+            z-index: 1000;
+        }
+
+        .logo {
+            color: #fff;
+            text-decoration: none;
+
+            font-family: "Outfit", sans-serif;
+            font-size: 25px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #ff83ce;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 6px;
+        }
+
+        .nav-links a {
+            padding: 11px 16px;
+
+            color: #bda7ba;
+            background: transparent;
+
+            border-radius: 12px;
+
+            text-decoration: none;
+
+            font-size: 13px;
+            font-weight: 600;
+
+            transition: .25s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #fff;
+            background: rgba(255, 115, 200, .13);
+        }
+
+        .page {
+            min-height: 100vh;
+
+            padding:
+                145px
+                24px
+                100px;
+        }
+
+        .container {
+            width: min(1120px, 100%);
             margin: auto;
         }
 
-        .support-header {
+        .hero {
+            min-height: calc(100vh - 180px);
+
+            display: flex;
+            flex-direction: column;
+
+            align-items: center;
+            justify-content: center;
+
             text-align: center;
-            margin-bottom: 45px;
         }
 
-        .support-header h1 {
+        .badge {
+            display: inline-flex;
+            align-items: center;
+
+            padding: 9px 16px;
+
+            margin-bottom: 24px;
+
+            color: #ffb4e2;
+
+            background: rgba(255, 105, 195, .09);
+            border: 1px solid rgba(255, 145, 215, .22);
+
+            border-radius: 999px;
+
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: .5px;
+        }
+
+        .hero h1 {
+            max-width: 900px;
+
             font-family: "Outfit", sans-serif;
-            font-size: clamp(42px, 6vw, 64px);
-            line-height: 1;
+
+            font-size:
+                clamp(52px, 8vw, 92px);
+
+            line-height: .94;
             font-weight: 800;
-            letter-spacing: -2px;
+            letter-spacing: -4px;
         }
 
-        .support-header h1 span {
+        .hero h1 span,
+        .section-title span {
             background:
                 linear-gradient(
                     90deg,
@@ -55,17 +225,114 @@
             -webkit-text-fill-color: transparent;
         }
 
-        .support-header p {
+        .hero p {
+            max-width: 650px;
+
+            margin-top: 28px;
+
+            color: #cdb9c9;
+
+            font-size: 15px;
+            line-height: 1.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+
+            justify-content: center;
+
+            gap: 14px;
+
+            margin-top: 34px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 15px 24px;
+
+            border-radius: 14px;
+
+            font-family: inherit;
+            font-size: 14px;
+            font-weight: 700;
+
+            text-decoration: none;
+
+            cursor: pointer;
+
+            transition: .25s ease;
+        }
+
+        .btn-primary {
+            color: #fff;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ff68bd,
+                    #bd67ff
+                );
+
+            box-shadow:
+                0 10px 35px rgba(255, 75, 185, .2);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 15px 45px rgba(255, 75, 185, .35);
+        }
+
+        .btn-secondary {
+            color: #f4ddec;
+
+            background: rgba(255, 255, 255, .055);
+
+            border: 1px solid rgba(255, 190, 230, .1);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 115, 200, .1);
+        }
+
+        .section {
+            width: min(850px, 100%);
+            margin: 0 auto;
+            padding: 110px 0 40px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-family: "Outfit", sans-serif;
+            font-size: clamp(42px, 6vw, 64px);
+            line-height: 1;
+            font-weight: 800;
+            letter-spacing: -2px;
+        }
+
+        .section-header p {
             max-width: 620px;
             margin: 17px auto 0;
+
             color: #cbb5c6;
+
             font-size: 14px;
             line-height: 1.9;
         }
 
-        .support-card {
+        .card {
             padding: 35px 32px;
             margin-bottom: 20px;
+
             border-radius: 24px;
 
             background:
@@ -82,7 +349,7 @@
             -webkit-backdrop-filter: blur(18px);
         }
 
-        .support-card h2 {
+        .card h2 {
             margin-bottom: 12px;
 
             font-family: "Outfit", sans-serif;
@@ -91,13 +358,48 @@
             font-weight: 700;
         }
 
-        .support-card > p {
-            margin-bottom: 25px;
-
+        .card p {
             color: #c3adbd;
 
             font-size: 13px;
             line-height: 1.9;
+        }
+
+        .download-card {
+            text-align: center;
+            padding: 45px 30px;
+        }
+
+        .download-card p {
+            max-width: 600px;
+            margin: 0 auto 25px;
+        }
+
+        .platforms {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
+            margin-top: 25px;
+        }
+
+        .platform {
+            padding: 20px;
+
+            border-radius: 16px;
+
+            background: rgba(255,255,255,.035);
+            border: 1px solid rgba(255,170,225,.07);
+        }
+
+        .platform strong {
+            display: block;
+            margin-bottom: 5px;
+            color: #fff;
+        }
+
+        .platform span {
+            color: #a995a6;
+            font-size: 12px;
         }
 
         .support-list {
@@ -105,6 +407,8 @@
             flex-direction: column;
 
             gap: 13px;
+
+            margin-top: 20px;
 
             list-style: none;
         }
@@ -114,11 +418,9 @@
 
             border-radius: 14px;
 
-            background:
-                rgba(255,255,255,.035);
+            background: rgba(255,255,255,.035);
 
-            border:
-                1px solid rgba(255,170,225,.07);
+            border: 1px solid rgba(255,170,225,.07);
 
             color: #d6c1d1;
 
@@ -128,44 +430,29 @@
 
         .support-list li strong {
             display: block;
-
             margin-bottom: 3px;
-
             color: #fff;
-
-            font-weight: 700;
         }
 
-        .discord-support {
+        .discord-card {
             text-align: center;
-
             padding: 42px 30px;
         }
 
-        .discord-support .icon {
+        .discord-card .icon {
             margin-bottom: 14px;
-
             font-size: 42px;
         }
 
-        .discord-support h2 {
-            margin-bottom: 10px;
-        }
-
-        .discord-support p {
+        .discord-card p {
             max-width: 550px;
-
-            margin:
-                0 auto
-                25px;
+            margin: 0 auto 25px;
         }
 
         .faq-title {
-            margin-top: 38px;
-            margin-bottom: 18px;
+            margin: 38px 0 18px;
 
             font-family: "Outfit", sans-serif;
-
             font-size: 27px;
 
             text-align: center;
@@ -178,11 +465,9 @@
 
             border-radius: 17px;
 
-            background:
-                rgba(20, 8, 24, .70);
+            background: rgba(20, 8, 24, .70);
 
-            border:
-                1px solid rgba(255,170,225,.10);
+            border: 1px solid rgba(255,170,225,.10);
         }
 
         .faq-question {
@@ -203,7 +488,6 @@
             font-family: inherit;
 
             font-size: 13px;
-
             font-weight: 700;
 
             text-align: left;
@@ -230,7 +514,6 @@
             color: #c7b1c1;
 
             font-size: 12px;
-
             line-height: 1.8;
         }
 
@@ -242,15 +525,116 @@
             transform: rotate(45deg);
         }
 
+        footer {
+            width: min(
+                1120px,
+                calc(100% - 40px)
+            );
+
+            margin:
+                0 auto
+                30px;
+
+            padding-top: 25px;
+
+            border-top:
+                1px solid rgba(255, 170, 225, .08);
+
+            color: #927c8e;
+
+            text-align: center;
+
+            font-size: 11px;
+        }
+
         @media (max-width: 620px) {
 
-            .support-card {
+            nav {
+                top: 12px;
+
+                width: calc(100% - 20px);
+
+                flex-direction: column;
+
+                gap: 4px;
+
+                padding:
+                    10px
+                    10px
+                    9px;
+            }
+
+            .logo {
+                font-size: 22px;
+            }
+
+            .nav-links {
+                width: 100%;
+                justify-content: center;
+                overflow-x: auto;
+            }
+
+            .nav-links a {
+                padding:
+                    8px
+                    11px;
+
+                font-size: 11px;
+                white-space: nowrap;
+            }
+
+            .page {
+                padding:
+                    145px
+                    18px
+                    80px;
+            }
+
+            .hero {
+                min-height:
+                    calc(100vh - 165px);
+            }
+
+            .hero h1 {
+                font-size:
+                    clamp(
+                        48px,
+                        15vw,
+                        70px
+                    );
+
+                letter-spacing: -3px;
+            }
+
+            .hero p {
+                font-size: 13px;
+                line-height: 1.8;
+            }
+
+            .hero-buttons {
+                width: 100%;
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .section {
+                padding-top: 90px;
+            }
+
+            .card {
                 padding:
                     28px
                     23px;
             }
 
-            .discord-support {
+            .platforms {
+                grid-template-columns: 1fr;
+            }
+
+            .discord-card {
                 padding:
                     38px
                     22px;
@@ -264,33 +648,27 @@
 
 <body>
 
-
-    <!-- NAVIGATION -->
-
     <nav>
 
-        <a href="index.html" class="logo">
+        <a href="#home" class="logo">
             R<span>YVEN</span>
         </a>
 
         <div class="nav-links">
 
-            <a href="index.html">
+            <a href="#home" class="active">
                 Home
             </a>
 
-            <a href="download.html">
+            <a href="#download">
                 Download
             </a>
 
-            <a
-                href="support.html"
-                class="active"
-            >
+            <a href="#support">
                 Support
             </a>
 
-            <a href="donation.html">
+            <a href="#donate">
                 Donate
             </a>
 
@@ -306,23 +684,141 @@
 
     </nav>
 
+    <main>
 
-    <!-- SUPPORT -->
+        <section class="page" id="home">
 
-    <main class="page">
+            <div class="hero container">
 
-        <div class="support-content">
+                <div class="badge">
+                    RYVEN — CHAPTER 1 SEASON 9
+                </div>
 
+                <h1>
+                    Experience <span>Ryven.</span>
+                </h1>
 
-            <div class="support-header">
+                <p>
+                    A community-driven Fortnite experience built
+                    for players who want to compete, customize,
+                    and enjoy the game with the community.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a
+                        href="#download"
+                        class="btn btn-primary"
+                    >
+                        Download Ryven
+                    </a>
+
+                    <a
+                        href="#support"
+                        class="btn btn-secondary"
+                    >
+                        Support Ryven
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="section" id="download">
+
+            <div class="section-header">
+
+                <div class="badge">
+                    DOWNLOAD RYVEN
+                </div>
+
+                <h2 class="section-title">
+                    Get <span>Ryven.</span>
+                </h2>
+
+                <p>
+                    Choose your platform and get ready to
+                    experience Chapter 1 Season 9.
+                </p>
+
+            </div>
+
+            <div class="card download-card">
+
+                <h2>
+                    Ryven Launcher
+                </h2>
+
+                <p>
+                    Download the Ryven launcher and get access
+                    to the latest available build.
+                </p>
+
+                <a
+                    href="#"
+                    class="btn btn-primary"
+                    onclick="alert('The Ryven download is not available yet.'); return false;"
+                >
+                    Download Ryven
+                </a>
+
+                <div class="platforms">
+
+                    <div class="platform">
+
+                        <strong>
+                            Windows
+                        </strong>
+
+                        <span>
+                            Launcher available soon
+                        </span>
+
+                    </div>
+
+                    <div class="platform">
+
+                        <strong>
+                            iOS
+                        </strong>
+
+                        <span>
+                            Build available soon
+                        </span>
+
+                    </div>
+
+                    <div class="platform">
+
+                        <strong>
+                            Android
+                        </strong>
+
+                        <span>
+                            APK coming soon
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="section" id="support">
+
+            <div class="section-header">
 
                 <div class="badge">
                     SUPPORT RYVEN
                 </div>
 
-                <h1>
+                <h2 class="section-title">
                     Need <span>help?</span>
-                </h1>
+                </h2>
 
                 <p>
                     Find answers to common questions or join
@@ -331,10 +827,7 @@
 
             </div>
 
-
-            <!-- DISCORD -->
-
-            <div class="support-card discord-support">
+            <div class="card discord-card">
 
                 <div class="icon">
                     💬
@@ -361,10 +854,7 @@
 
             </div>
 
-
-            <!-- SUPPORT INFORMATION -->
-
-            <div class="support-card">
+            <div class="card">
 
                 <h2>
                     Getting Support
@@ -406,13 +896,9 @@
 
             </div>
 
-
-            <!-- FAQ -->
-
             <h2 class="faq-title">
                 Common Questions
             </h2>
-
 
             <div class="faq-item">
 
@@ -434,7 +920,6 @@
                 </div>
 
             </div>
-
 
             <div class="faq-item">
 
@@ -458,7 +943,6 @@
 
             </div>
 
-
             <div class="faq-item">
 
                 <button class="faq-question">
@@ -479,7 +963,6 @@
                 </div>
 
             </div>
-
 
             <div class="faq-item">
 
@@ -502,20 +985,59 @@
 
             </div>
 
+        </section>
 
-        </div>
+        <section class="section" id="donate">
+
+            <div class="section-header">
+
+                <div class="badge">
+                    SUPPORT RYVEN
+                </div>
+
+                <h2 class="section-title">
+                    Support <span>Ryven.</span>
+                </h2>
+
+                <p>
+                    Donations help support development,
+                    hosting, and future Ryven updates.
+                </p>
+
+            </div>
+
+            <div class="card discord-card">
+
+                <h2>
+                    Support the Project
+                </h2>
+
+                <p>
+                    If you want to support Ryven, join our
+                    Discord and check the available donation
+                    options.
+                </p>
+
+                <a
+                    href="https://discord.gg/Ryvenfn"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-primary"
+                >
+                    Support Ryven
+                </a>
+
+            </div>
+
+        </section>
 
     </main>
-
-
-    <!-- FOOTER -->
 
     <footer>
 
         © 2026 Ryven. All rights reserved.
 
     </footer>
-
 
     <script>
 
@@ -533,6 +1055,42 @@
                 });
 
             });
+
+        const sections =
+            document.querySelectorAll("section[id]");
+
+        const navLinks =
+            document.querySelectorAll(".nav-links a");
+
+        window.addEventListener("scroll", () => {
+
+            let current = "home";
+
+            sections.forEach(section => {
+
+                const top =
+                    section.offsetTop - 180;
+
+                if (window.scrollY >= top) {
+                    current = section.id;
+                }
+
+            });
+
+            navLinks.forEach(link => {
+
+                link.classList.remove("active");
+
+                if (
+                    link.getAttribute("href") ===
+                    "#" + current
+                ) {
+                    link.classList.add("active");
+                }
+
+            });
+
+        });
 
     </script>
 
