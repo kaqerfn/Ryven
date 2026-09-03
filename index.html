@@ -5,10 +5,7 @@
 
     <meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Ryven — Chapter 1 Season 9</title>
 
@@ -301,7 +298,7 @@
         }
 
         .section {
-            width: min(850px, 100%);
+            width: min(900px, 100%);
             margin: 0 auto;
             padding: 110px 0 40px;
         }
@@ -353,63 +350,56 @@
             -webkit-backdrop-filter: blur(18px);
         }
 
-        .card h2 {
-            margin-bottom: 12px;
-
-            font-family: "Outfit", sans-serif;
-
-            font-size: 26px;
-            font-weight: 700;
-        }
-
-        .card p {
-            color: #c9b0c4;
-
-            font-size: 13px;
-            line-height: 1.9;
-        }
-
-        .download-card {
-            text-align: center;
-            padding: 45px 30px;
-        }
-
-        .download-card p {
-            max-width: 600px;
-            margin: 0 auto 25px;
-        }
-
-        .download-options {
+        .download-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 14px;
-            margin-top: 30px;
+            gap: 16px;
         }
 
         .download-option {
-            padding: 25px 20px;
+            padding: 28px 24px;
 
-            border-radius: 18px;
+            border-radius: 19px;
 
             background:
                 rgba(255, 100, 200, .035);
 
             border:
-                1px solid rgba(255, 130, 215, .08);
+                1px solid rgba(255, 130, 215, .09);
+
+            text-align: center;
+
+            transition: .25s ease;
+        }
+
+        .download-option:hover {
+            transform: translateY(-3px);
+
+            border-color:
+                rgba(255, 130, 215, .20);
+
+            background:
+                rgba(160, 70, 255, .08);
         }
 
         .download-option h3 {
-            margin-bottom: 7px;
+            margin-bottom: 8px;
 
             font-family: "Outfit", sans-serif;
 
-            font-size: 19px;
+            font-size: 23px;
+            font-weight: 700;
         }
 
         .download-option p {
-            margin-bottom: 18px;
+            min-height: 42px;
+
+            margin-bottom: 20px;
+
+            color: #bba5b7;
 
             font-size: 12px;
+            line-height: 1.7;
         }
 
         .download-option .btn {
@@ -419,51 +409,23 @@
         .status {
             display: inline-block;
 
-            margin-bottom: 16px;
+            margin-bottom: 15px;
 
-            padding: 6px 10px;
-
-            border-radius: 999px;
+            padding: 6px 11px;
 
             color: #ffb4e2;
 
-            background: rgba(255, 80, 190, .10);
+            background:
+                rgba(255, 80, 190, .10);
+
+            border:
+                1px solid rgba(255, 130, 215, .13);
+
+            border-radius: 999px;
 
             font-size: 10px;
             font-weight: 700;
-        }
-
-        .platforms {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-
-            gap: 14px;
-
-            margin-top: 25px;
-        }
-
-        .platform {
-            padding: 20px;
-
-            border-radius: 16px;
-
-            background: rgba(255, 100, 200, .035);
-
-            border:
-                1px solid rgba(255, 130, 215, .08);
-        }
-
-        .platform strong {
-            display: block;
-
-            margin-bottom: 5px;
-
-            color: #fff;
-        }
-
-        .platform span {
-            color: #a994a6;
-            font-size: 12px;
+            letter-spacing: .6px;
         }
 
         .support-list {
@@ -514,12 +476,40 @@
             font-size: 42px;
         }
 
+        .discord-card h2 {
+            margin-bottom: 12px;
+
+            font-family: "Outfit", sans-serif;
+
+            font-size: 26px;
+        }
+
         .discord-card p {
             max-width: 550px;
 
             margin:
                 0 auto
                 25px;
+
+            color: #c9b0c4;
+
+            font-size: 13px;
+            line-height: 1.9;
+        }
+
+        .card h2 {
+            margin-bottom: 12px;
+
+            font-family: "Outfit", sans-serif;
+
+            font-size: 26px;
+        }
+
+        .card > p {
+            color: #c9b0c4;
+
+            font-size: 13px;
+            line-height: 1.9;
         }
 
         .faq-title {
@@ -709,14 +699,10 @@
             .card {
                 padding:
                     28px
-                    23px;
+                    20px;
             }
 
-            .download-options {
-                grid-template-columns: 1fr;
-            }
-
-            .platforms {
+            .download-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -829,46 +815,52 @@
                 </h2>
 
                 <p>
-                    Download the Ryven build or launcher for
-                    your supported platform.
+                    Choose your platform and get the latest
+                    available Ryven build.
                 </p>
 
             </div>
 
-            <div class="card download-card">
+            <div class="card">
 
-                <h2>
-                    Windows
-                </h2>
-
-                <p>
-                    Download the current Ryven Windows build
-                    and start playing Chapter 1 Season 9.
-                </p>
-
-                <a
-                    href="https://dl.fortforge.co.uk/download/942517ec-a6ed-4e93-895b-da03273ce715/build"
-                    class="btn btn-primary"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Download Windows Build
-                </a>
-
-                <div class="download-options">
+                <div class="download-grid">
 
                     <div class="download-option">
 
                         <span class="status">
-                            AVAILABLE
+                            WINDOWS
                         </span>
 
                         <h3>
-                            Windows Build
+                            Launcher
                         </h3>
 
                         <p>
-                            Current Ryven game build.
+                            The Ryven Launcher is coming soon.
+                        </p>
+
+                        <a
+                            href="#"
+                            class="btn btn-secondary"
+                            onclick="return false;"
+                        >
+                            Coming Soon
+                        </a>
+
+                    </div>
+
+                    <div class="download-option">
+
+                        <span class="status">
+                            WINDOWS
+                        </span>
+
+                        <h3>
+                            Build
+                        </h3>
+
+                        <p>
+                            Download the current Ryven Windows build.
                         </p>
 
                         <a
@@ -885,65 +877,48 @@
                     <div class="download-option">
 
                         <span class="status">
-                            COMING SOON
+                            IOS
                         </span>
 
                         <h3>
-                            Ryven Launcher
+                            IPA
                         </h3>
 
                         <p>
-                            Launcher for managing Ryven
-                            and its available builds.
+                            The Ryven IPA is coming soon.
                         </p>
 
                         <a
                             href="#"
                             class="btn btn-secondary"
-                            onclick="alert('The Ryven Launcher is not available yet.'); return false;"
+                            onclick="return false;"
                         >
-                            Launcher Soon
+                            Coming Soon
                         </a>
 
                     </div>
 
-                </div>
+                    <div class="download-option">
 
-                <div class="platforms">
-
-                    <div class="platform">
-
-                        <strong>
-                            Windows
-                        </strong>
-
-                        <span>
-                            Build available
+                        <span class="status">
+                            ANDROID
                         </span>
 
-                    </div>
+                        <h3>
+                            APK
+                        </h3>
 
-                    <div class="platform">
+                        <p>
+                            The Ryven APK is coming soon.
+                        </p>
 
-                        <strong>
-                            iOS
-                        </strong>
-
-                        <span>
-                            Coming soon
-                        </span>
-
-                    </div>
-
-                    <div class="platform">
-
-                        <strong>
-                            Android
-                        </strong>
-
-                        <span>
-                            APK coming soon
-                        </span>
+                        <a
+                            href="#"
+                            class="btn btn-secondary"
+                            onclick="return false;"
+                        >
+                            Coming Soon
+                        </a>
 
                     </div>
 
@@ -967,7 +942,7 @@
 
                 <p>
                     Find answers to common questions or join
-                    the Ryven Discord for direct support.
+                    the Ryven Discord for support.
                 </p>
 
             </div>
@@ -1071,7 +1046,7 @@
                 <button class="faq-question">
 
                     <span>
-                        I can't install the game. What should I do?
+                        Where can I download the Windows build?
                     </span>
 
                     <span class="faq-plus">
@@ -1081,9 +1056,8 @@
                 </button>
 
                 <div class="faq-answer">
-                    Make sure you're using the correct build
-                    for your platform. If you're still having
-                    trouble, open a support ticket.
+                    The current Windows build is available
+                    from the Download section.
                 </div>
 
             </div>
@@ -1093,7 +1067,7 @@
                 <button class="faq-question">
 
                     <span>
-                        Where can I find announcements?
+                        Is the Ryven Launcher available?
                     </span>
 
                     <span class="faq-plus">
@@ -1103,8 +1077,7 @@
                 </button>
 
                 <div class="faq-answer">
-                    Ryven announcements and updates are posted
-                    in the official Discord.
+                    The Ryven Launcher is currently coming soon.
                 </div>
 
             </div>
@@ -1114,7 +1087,7 @@
                 <button class="faq-question">
 
                     <span>
-                        Is Android available?
+                        Are iOS and Android available?
                     </span>
 
                     <span class="faq-plus">
@@ -1124,8 +1097,8 @@
                 </button>
 
                 <div class="faq-answer">
-                    The APK version is currently coming soon.
-                    Watch the Discord for updates.
+                    The iOS IPA and Android APK are currently
+                    coming soon.
                 </div>
 
             </div>
