@@ -20,7 +20,657 @@
         rel="stylesheet"
     >
 
-    <link rel="stylesheet" href="style.css">
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            color: #fff;
+            min-height: 100vh;
+            overflow-x: hidden;
+
+            background:
+                linear-gradient(
+                    rgba(20, 3, 25, .62),
+                    rgba(8, 2, 14, .88)
+                ),
+                url("image.jpeg") center / cover fixed no-repeat;
+
+            background-color: #100611;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: -2;
+            pointer-events: none;
+
+            background:
+                radial-gradient(
+                    circle at 50% 0%,
+                    rgba(255, 80, 190, .30),
+                    transparent 40%
+                ),
+                radial-gradient(
+                    circle at 90% 80%,
+                    rgba(160, 70, 255, .20),
+                    transparent 38%
+                );
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            pointer-events: none;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    transparent 45%,
+                    rgba(0, 0, 0, .45)
+                );
+        }
+
+        nav {
+            position: fixed;
+            top: 18px;
+            left: 50%;
+            transform: translateX(-50%);
+
+            width: min(1120px, calc(100% - 30px));
+            min-height: 68px;
+
+            padding: 10px 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            background: rgba(19, 5, 25, .78);
+            border: 1px solid rgba(255, 130, 210, .18);
+            border-radius: 20px;
+
+            backdrop-filter: blur(22px);
+            -webkit-backdrop-filter: blur(22px);
+
+            box-shadow:
+                0 20px 70px rgba(0, 0, 0, .40);
+
+            z-index: 1000;
+        }
+
+        .logo {
+            color: #fff;
+            text-decoration: none;
+
+            font-family: "Outfit", sans-serif;
+            font-size: 25px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #ff83ce;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 6px;
+        }
+
+        .nav-links a {
+            padding: 11px 16px;
+
+            color: #c8a9c7;
+            background: transparent;
+
+            border-radius: 12px;
+
+            text-decoration: none;
+
+            font-size: 13px;
+            font-weight: 600;
+
+            transition: .25s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #fff;
+            background: rgba(255, 100, 200, .14);
+        }
+
+        .page {
+            min-height: 100vh;
+
+            padding:
+                145px
+                24px
+                100px;
+        }
+
+        .container {
+            width: min(1120px, 100%);
+            margin: auto;
+        }
+
+        .hero {
+            min-height: calc(100vh - 180px);
+
+            display: flex;
+            flex-direction: column;
+
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+
+            padding: 9px 16px;
+
+            margin-bottom: 24px;
+
+            color: #ffb4e2;
+
+            background: rgba(255, 90, 195, .10);
+            border: 1px solid rgba(255, 140, 215, .24);
+
+            border-radius: 999px;
+
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: .5px;
+        }
+
+        .hero h1 {
+            max-width: 900px;
+
+            font-family: "Outfit", sans-serif;
+
+            font-size:
+                clamp(52px, 8vw, 92px);
+
+            line-height: .94;
+            font-weight: 800;
+            letter-spacing: -4px;
+        }
+
+        .hero h1 span,
+        .section-title span {
+            background:
+                linear-gradient(
+                    90deg,
+                    #ffffff,
+                    #ff91d5,
+                    #c568ff
+                );
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            max-width: 650px;
+
+            margin-top: 28px;
+
+            color: #d0b8d0;
+
+            font-size: 15px;
+            line-height: 1.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+
+            justify-content: center;
+
+            gap: 14px;
+
+            margin-top: 34px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 15px 24px;
+
+            border-radius: 14px;
+
+            font-family: inherit;
+            font-size: 14px;
+            font-weight: 700;
+
+            text-decoration: none;
+
+            cursor: pointer;
+
+            transition: .25s ease;
+        }
+
+        .btn-primary {
+            color: #fff;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ff4fb7,
+                    #a958ff
+                );
+
+            box-shadow:
+                0 10px 35px rgba(255, 60, 185, .25);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 15px 45px rgba(190, 70, 255, .35);
+        }
+
+        .btn-secondary {
+            color: #f5dff1;
+
+            background: rgba(255, 255, 255, .055);
+
+            border: 1px solid rgba(255, 150, 220, .13);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(180, 70, 255, .12);
+        }
+
+        .section {
+            width: min(850px, 100%);
+            margin: 0 auto;
+            padding: 110px 0 40px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-family: "Outfit", sans-serif;
+
+            font-size:
+                clamp(42px, 6vw, 64px);
+
+            line-height: 1;
+            font-weight: 800;
+            letter-spacing: -2px;
+        }
+
+        .section-header p {
+            max-width: 620px;
+
+            margin: 17px auto 0;
+
+            color: #cbb5c6;
+
+            font-size: 14px;
+            line-height: 1.9;
+        }
+
+        .card {
+            padding: 35px 32px;
+            margin-bottom: 20px;
+
+            border-radius: 24px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(42, 8, 45, .82),
+                    rgba(17, 4, 25, .78)
+                );
+
+            border:
+                1px solid rgba(255, 135, 215, .12);
+
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+        }
+
+        .card h2 {
+            margin-bottom: 12px;
+
+            font-family: "Outfit", sans-serif;
+
+            font-size: 26px;
+            font-weight: 700;
+        }
+
+        .card p {
+            color: #c9b0c4;
+
+            font-size: 13px;
+            line-height: 1.9;
+        }
+
+        .download-card {
+            text-align: center;
+            padding: 45px 30px;
+        }
+
+        .download-card p {
+            max-width: 600px;
+            margin: 0 auto 25px;
+        }
+
+        .platforms {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 14px;
+
+            margin-top: 25px;
+        }
+
+        .platform {
+            padding: 20px;
+
+            border-radius: 16px;
+
+            background: rgba(255, 100, 200, .035);
+
+            border:
+                1px solid rgba(255, 130, 215, .08);
+        }
+
+        .platform strong {
+            display: block;
+
+            margin-bottom: 5px;
+
+            color: #fff;
+        }
+
+        .platform span {
+            color: #a994a6;
+            font-size: 12px;
+        }
+
+        .support-list {
+            display: flex;
+            flex-direction: column;
+
+            gap: 13px;
+
+            margin-top: 20px;
+
+            list-style: none;
+        }
+
+        .support-list li {
+            padding: 15px 17px;
+
+            border-radius: 14px;
+
+            background:
+                rgba(255, 100, 200, .035);
+
+            border:
+                1px solid rgba(255, 130, 215, .08);
+
+            color: #d6c1d1;
+
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        .support-list li strong {
+            display: block;
+
+            margin-bottom: 3px;
+
+            color: #fff;
+        }
+
+        .discord-card {
+            text-align: center;
+
+            padding: 42px 30px;
+        }
+
+        .discord-card .icon {
+            margin-bottom: 14px;
+
+            font-size: 42px;
+        }
+
+        .discord-card p {
+            max-width: 550px;
+
+            margin:
+                0 auto
+                25px;
+        }
+
+        .faq-title {
+            margin:
+                38px 0
+                18px;
+
+            font-family: "Outfit", sans-serif;
+
+            font-size: 27px;
+
+            text-align: center;
+        }
+
+        .faq-item {
+            margin-bottom: 12px;
+
+            overflow: hidden;
+
+            border-radius: 17px;
+
+            background:
+                rgba(25, 5, 30, .72);
+
+            border:
+                1px solid rgba(255, 130, 215, .10);
+        }
+
+        .faq-question {
+            width: 100%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 20px 22px;
+
+            border: 0;
+
+            background: transparent;
+
+            color: #fff;
+
+            font-family: inherit;
+
+            font-size: 13px;
+            font-weight: 700;
+
+            text-align: left;
+
+            cursor: pointer;
+        }
+
+        .faq-plus {
+            color: #ff83ce;
+
+            font-size: 21px;
+
+            transition: .25s ease;
+        }
+
+        .faq-answer {
+            display: none;
+
+            padding:
+                0
+                22px
+                21px;
+
+            color: #c7b1c1;
+
+            font-size: 12px;
+
+            line-height: 1.8;
+        }
+
+        .faq-item.open .faq-answer {
+            display: block;
+        }
+
+        .faq-item.open .faq-plus {
+            transform: rotate(45deg);
+        }
+
+        footer {
+            width: min(
+                1120px,
+                calc(100% - 40px)
+            );
+
+            margin:
+                0 auto
+                30px;
+
+            padding-top: 25px;
+
+            border-top:
+                1px solid rgba(255, 130, 215, .08);
+
+            color: #927c8e;
+
+            text-align: center;
+
+            font-size: 11px;
+        }
+
+        @media (max-width: 620px) {
+
+            nav {
+                top: 12px;
+
+                width: calc(100% - 20px);
+
+                flex-direction: column;
+
+                gap: 4px;
+
+                padding:
+                    10px
+                    10px
+                    9px;
+            }
+
+            .logo {
+                font-size: 22px;
+            }
+
+            .nav-links {
+                width: 100%;
+
+                justify-content: center;
+
+                overflow-x: auto;
+            }
+
+            .nav-links a {
+                padding:
+                    8px
+                    11px;
+
+                font-size: 11px;
+
+                white-space: nowrap;
+            }
+
+            .page {
+                padding:
+                    145px
+                    18px
+                    80px;
+            }
+
+            .hero {
+                min-height:
+                    calc(100vh - 165px);
+            }
+
+            .hero h1 {
+                font-size:
+                    clamp(
+                        48px,
+                        15vw,
+                        70px
+                    );
+
+                letter-spacing: -3px;
+            }
+
+            .hero p {
+                font-size: 13px;
+                line-height: 1.8;
+            }
+
+            .hero-buttons {
+                width: 100%;
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .section {
+                padding-top: 90px;
+            }
+
+            .card {
+                padding:
+                    28px
+                    23px;
+            }
+
+            .platforms {
+                grid-template-columns: 1fr;
+            }
+
+            .discord-card {
+                padding:
+                    38px
+                    22px;
+            }
+
+        }
+
+    </style>
 
 </head>
 
@@ -28,25 +678,25 @@
 
     <nav>
 
-        <a href="index.html" class="logo">
+        <a href="#home" class="logo">
             R<span>YVEN</span>
         </a>
 
         <div class="nav-links">
 
-            <a href="index.html">
+            <a href="#home" class="active">
                 Home
             </a>
 
-            <a href="download.html">
+            <a href="#download">
                 Download
             </a>
 
-            <a href="support.html">
+            <a href="#support">
                 Support
             </a>
 
-            <a href="donation.html">
+            <a href="#donate">
                 Donate
             </a>
 
@@ -62,43 +712,352 @@
 
     </nav>
 
-    <main class="page">
+    <main>
 
-        <div class="hero container">
+        <section class="page" id="home">
 
-            <div class="badge">
-                RYVEN — CHAPTER 1 SEASON 9
+            <div class="hero container">
+
+                <div class="badge">
+                    RYVEN — CHAPTER 1 SEASON 9
+                </div>
+
+                <h1>
+                    Experience <span>Ryven.</span>
+                </h1>
+
+                <p>
+                    A community-driven Fortnite experience built
+                    for players who want to compete, customize,
+                    and enjoy the game with the community.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a
+                        href="#download"
+                        class="btn btn-primary"
+                    >
+                        Download Ryven
+                    </a>
+
+                    <a
+                        href="#support"
+                        class="btn btn-secondary"
+                    >
+                        Support Ryven
+                    </a>
+
+                </div>
+
             </div>
 
-            <h1>
-                Experience <span>Ryven.</span>
-            </h1>
+        </section>
 
-            <p>
-                A community-driven Fortnite experience built
-                for players who want to compete, customize,
-                and enjoy the game with the community.
-            </p>
+        <section class="section" id="download">
 
-            <div class="hero-buttons">
+            <div class="section-header">
+
+                <div class="badge">
+                    DOWNLOAD RYVEN
+                </div>
+
+                <h2 class="section-title">
+                    Get <span>Ryven.</span>
+                </h2>
+
+                <p>
+                    Choose your platform and get ready to
+                    experience Chapter 1 Season 9.
+                </p>
+
+            </div>
+
+            <div class="card download-card">
+
+                <h2>
+                    Ryven Launcher
+                </h2>
+
+                <p>
+                    Download the Ryven launcher and get access
+                    to the latest available build.
+                </p>
 
                 <a
-                    href="download.html"
+                    href="#"
                     class="btn btn-primary"
+                    onclick="alert('The Ryven download is not available yet.'); return false;"
                 >
                     Download Ryven
                 </a>
 
+                <div class="platforms">
+
+                    <div class="platform">
+
+                        <strong>
+                            Windows
+                        </strong>
+
+                        <span>
+                            Launcher available soon
+                        </span>
+
+                    </div>
+
+                    <div class="platform">
+
+                        <strong>
+                            iOS
+                        </strong>
+
+                        <span>
+                            Build available soon
+                        </span>
+
+                    </div>
+
+                    <div class="platform">
+
+                        <strong>
+                            Android
+                        </strong>
+
+                        <span>
+                            APK coming soon
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="section" id="support">
+
+            <div class="section-header">
+
+                <div class="badge">
+                    SUPPORT RYVEN
+                </div>
+
+                <h2 class="section-title">
+                    Need <span>help?</span>
+                </h2>
+
+                <p>
+                    Find answers to common questions or join
+                    the Ryven Discord for direct support.
+                </p>
+
+            </div>
+
+            <div class="card discord-card">
+
+                <div class="icon">
+                    💬
+                </div>
+
+                <h2>
+                    Ryven Discord
+                </h2>
+
+                <p>
+                    The fastest way to get help is through
+                    our official Discord. Open a support ticket
+                    and explain your issue to the support team.
+                </p>
+
                 <a
-                    href="donation.html"
-                    class="btn btn-secondary"
+                    href="https://discord.gg/Ryvenfn"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-primary"
+                >
+                    Join Discord
+                </a>
+
+            </div>
+
+            <div class="card">
+
+                <h2>
+                    Getting Support
+                </h2>
+
+                <p>
+                    Before opening a ticket, make sure you
+                    provide enough information for our team
+                    to understand the issue.
+                </p>
+
+                <ul class="support-list">
+
+                    <li>
+                        <strong>Purchases</strong>
+                        Include your purchase information
+                        if your issue is related to a package.
+                    </li>
+
+                    <li>
+                        <strong>Downloads</strong>
+                        Tell us which platform and build
+                        you're having trouble with.
+                    </li>
+
+                    <li>
+                        <strong>Account Issues</strong>
+                        Explain the issue clearly and provide
+                        your Ryven username if necessary.
+                    </li>
+
+                    <li>
+                        <strong>Other Issues</strong>
+                        Give as much information as possible
+                        so the support team can help you.
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <h2 class="faq-title">
+                Common Questions
+            </h2>
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+
+                    <span>
+                        Where do I get help with Ryven?
+                    </span>
+
+                    <span class="faq-plus">
+                        +
+                    </span>
+
+                </button>
+
+                <div class="faq-answer">
+                    Join the official Ryven Discord and open
+                    a support ticket.
+                </div>
+
+            </div>
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+
+                    <span>
+                        I can't install the game. What should I do?
+                    </span>
+
+                    <span class="faq-plus">
+                        +
+                    </span>
+
+                </button>
+
+                <div class="faq-answer">
+                    Make sure you're using the correct build
+                    for your platform. If you're still having
+                    trouble, open a support ticket.
+                </div>
+
+            </div>
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+
+                    <span>
+                        Where can I find announcements?
+                    </span>
+
+                    <span class="faq-plus">
+                        +
+                    </span>
+
+                </button>
+
+                <div class="faq-answer">
+                    Ryven announcements and updates are posted
+                    in the official Discord.
+                </div>
+
+            </div>
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+
+                    <span>
+                        Is Android available?
+                    </span>
+
+                    <span class="faq-plus">
+                        +
+                    </span>
+
+                </button>
+
+                <div class="faq-answer">
+                    The APK version is currently coming soon.
+                    Watch the Discord for updates.
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="section" id="donate">
+
+            <div class="section-header">
+
+                <div class="badge">
+                    SUPPORT RYVEN
+                </div>
+
+                <h2 class="section-title">
+                    Support <span>Ryven.</span>
+                </h2>
+
+                <p>
+                    Donations help support development,
+                    hosting, and future Ryven updates.
+                </p>
+
+            </div>
+
+            <div class="card discord-card">
+
+                <h2>
+                    Support the Project
+                </h2>
+
+                <p>
+                    If you want to support Ryven, join our
+                    Discord and check the available donation
+                    options.
+                </p>
+
+                <a
+                    href="https://discord.gg/Ryvenfn"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-primary"
                 >
                     Support Ryven
                 </a>
 
             </div>
 
-        </div>
+        </section>
 
     </main>
 
@@ -107,6 +1066,61 @@
         © 2026 Ryven. All rights reserved.
 
     </footer>
+
+    <script>
+
+        document
+            .querySelectorAll(".faq-question")
+            .forEach(question => {
+
+                question.addEventListener("click", () => {
+
+                    const item =
+                        question.parentElement;
+
+                    item.classList.toggle("open");
+
+                });
+
+            });
+
+        const sections =
+            document.querySelectorAll("section[id]");
+
+        const navLinks =
+            document.querySelectorAll(".nav-links a");
+
+        window.addEventListener("scroll", () => {
+
+            let current = "home";
+
+            sections.forEach(section => {
+
+                const top =
+                    section.offsetTop - 180;
+
+                if (window.scrollY >= top) {
+                    current = section.id;
+                }
+
+            });
+
+            navLinks.forEach(link => {
+
+                link.classList.remove("active");
+
+                if (
+                    link.getAttribute("href") ===
+                    "#" + current
+                ) {
+                    link.classList.add("active");
+                }
+
+            });
+
+        });
+
+    </script>
 
 </body>
 
